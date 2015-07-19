@@ -18,6 +18,7 @@ end
 
 gem 'pg',             group: :production
 gem 'spring',        group: :development
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'byebug'
