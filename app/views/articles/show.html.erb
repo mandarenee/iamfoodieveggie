@@ -1,14 +1,13 @@
 <p id="notice"><%= notice %></p>
+<div class="text-center">
+	<%= image_tag @article.photo.url(:medium) %>
+	<h2><%= @article.title %></h2>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
-
-<p>
-  <strong>Body:</strong>
+<pre>
   <%= @article.body %>
-</p>
+</pre>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', articles_path %>

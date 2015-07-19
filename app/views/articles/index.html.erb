@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
-
-<tbody>
-  <% @articles.each do |article| %>
-    <h3><%= link_to article.title, article %></h3>
-    <br>
-    <%= link_to 'Edit', edit_article_path(article) %>
-    <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <br><br><br>
-  <% end %>
-</tbody>
+<div class="text-center">
+  <tbody>
+    <% @articles.each do |article| %>
+      <%= link_to image_tag(article.photo.url(:medium)), article %>
+      <h3><%= link_to article.title, article %></h3>
+      <br>
+      <br><br><br>
+    <% end %>
+  </tbody>
+</div>
