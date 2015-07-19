@@ -11,6 +11,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem "paperclip", "~> 4.3"
+gem 'aws-sdk'
+gem 'dotenv-rails', :groups => [:development, :test]
 
 group :test, :development do
   gem 'sqlite3'
