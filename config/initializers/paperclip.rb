@@ -1,4 +1,8 @@
+Paperclip::Attachment.default_options
+
 Paperclip::Attachment.default_options.merge!(
+	url: ':s3_domain_url',
+	path: '/:class/:attachment/:id_partition/:style/:filename'
 	storage: :s3,
 	s3_credentials: {
 	  bucket: 						ENV['S3_BUCKET_NAME'],
