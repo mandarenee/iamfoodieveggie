@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150719025646) do
+ActiveRecord::Schema.define(version: 20150825062223) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -23,6 +23,10 @@ ActiveRecord::Schema.define(version: 20150719025646) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.string   "address"
+    t.integer  "food_rating"
+    t.integer  "service_rating"
+    t.integer  "ambience_rating"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -34,5 +38,14 @@ ActiveRecord::Schema.define(version: 20150719025646) do
   end
 
   add_index "comments", ["article_id"], name: "index_comments_on_article_id"
+
+  create_table "recipes", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.integer  "serves"
+    t.boolean  "published"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Recipes</h1>
+
+<h3>
+  <% @recipes.each do |recipe| %>
+    <%= link_to recipe.title.downcase, recipe %>
+    <br>
+  <% end %>
+</h3>
+
+<%= link_to 'New Recipe', new_recipe_path %>

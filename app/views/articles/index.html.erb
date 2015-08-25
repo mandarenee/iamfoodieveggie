@@ -1,11 +1,17 @@
 <p id="notice"><%= notice %></p>
 <div class="text-center">
   <tbody>
-    <% @articles.each do |article| %>
-      <%= link_to image_tag(article.photo.url(:medium)), article %>
-      <h3><%= link_to article.title, article %></h3>
-      <br>
-      <br><br><br>
-    <% end %>
+  	<div id="main-container" class="container">
+	  	<div class="row">
+		    <% @articles.each do |article| %>
+		    	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-2">
+			      <%= link_to image_tag(article.photo.url(:medium)), article %>
+			      <h3><%= link_to article.title.downcase, article %></h3>
+			      <br>
+			      <br><br><br>
+		      </div>
+		    <% end %>
+	    </div>
+    </div>
   </tbody>
 </div>

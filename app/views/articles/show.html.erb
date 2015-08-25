@@ -1,8 +1,14 @@
 <p id="notice"><%= notice %></p>
 <div class="text-center">
-	<%= image_tag @article.photo.url(:large) %>
 	<h2><%= @article.title %></h2>
-	<h4>
+  <p><%= @article.address %></p>
+  <%= image_tag @article.photo.url(:large) %>
+  <h3>
+    Food: <%= @article.food_rating %><br>
+    Service: <%= @article.service_rating %><br>
+    Ambience: <%= @article.ambience_rating %>
+  </h3>
+  <h4>
 		<%= link_to 'Edit', edit_article_path(@article) %> |
 		<%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %> |
 		<%= link_to 'Back', articles_path %>
@@ -12,4 +18,3 @@
 <pre>
   <%= @article.body %>
 </pre>
-

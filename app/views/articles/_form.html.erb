@@ -21,6 +21,22 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :food_rating %><br>
+    <%= f.select :food_rating, options_for_select([1, 2, 3, 4, 5]) %>
+  </div>
+  <div class="field">
+    <%= f.label :service_rating %><br>
+    <%= f.select :service_rating, options_for_select([1, 2, 3, 4, 5]) %>
+  </div>
+  <div class="field">
+    <%= f.label :ambience_rating %><br>
+    <%= f.select :ambience_rating, options_for_select([1, 2, 3, 4, 5]) %>
+  </div>
+  <div class="field">
     <%= f.label :body %><br>
     <%= f.text_area :body %>
   </div>
