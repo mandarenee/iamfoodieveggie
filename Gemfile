@@ -13,6 +13,7 @@ gem 'autoprefixer-rails'
 gem 'aws-sdk'
 gem "paperclip", "~> 4.3"
 gem 'dotenv-rails', :groups => [:development, :test]
+gem 'devise'
 
 group :test, :development do
   gem 'sqlite3'

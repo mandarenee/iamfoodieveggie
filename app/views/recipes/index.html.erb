@@ -1,12 +1,18 @@
 <p id="notice"><%= notice %></p>
+<div class="text-center">
+  <tbody>
+  	<div id="main-container" class="container">
+	  	<div class="row">
 
-<h1>Listing Recipes</h1>
-
-<h3>
-  <% @recipes.each do |recipe| %>
-    <%= link_to recipe.title.downcase, recipe %>
-    <br>
-  <% end %>
-</h3>
-
-<%= link_to 'New Recipe', new_recipe_path %>
+			  <% @recipes.each do |recipe| %>
+			  	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-2">
+				  	<%= link_to image_tag(recipe.photo.url(:medium)), recipe %>
+				    <h3><%= link_to recipe.title.downcase, recipe %></h3>
+				    <br>
+				    <br><br><br>
+					</div>
+			  <% end %>
+	    </div>
+    </div>
+  </tbody>
+</div>
