@@ -15,6 +15,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @text_block = @article.text_blocks.build
   end
 
   # GET /articles/new

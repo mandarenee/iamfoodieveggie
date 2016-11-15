@@ -1,0 +1,29 @@
+.page-block
+  p#notice = notice
+  div.text-center
+    hr
+    h2 = @recipe.title
+    hr
+    - unless @recipe.photo.url == "/images/original/missing.png"
+      .body-photos.text-center
+        = image_tag @recipe.photo.url
+
+  p = simple_format @recipe.body
+
+  - if @recipe.text_blocks.any?
+    - @recipe.text_blocks.each do |block|
+      - unless block.photo.url == "/images/original/missing.png"
+        .body-photos.text-center
+          = image_tag block.photo.url
+      = simple_format block.body
+
+  h4.text-center
+  	- if user_signed_in?
+      = link_to 'Edit', edit_recipe_path(@recipe)
+      br
+      = link_to 'Destroy', @recipe, method: :delete, data: { confirm: 'Are you sure?' }
+      br
+
+    = link_to 'Back', recipes_path
+
+    = render 'text_block_form'

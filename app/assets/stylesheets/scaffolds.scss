@@ -1,5 +1,5 @@
 body {
-  background-color: #FAFAFA;
+  background-color: #FFFFFF;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -82,3 +82,44 @@ header {
   }
 }
 
+.logo-image img {
+  width: 250px;
+}
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
+.navbar-default {
+    background-color: #FFF;
+}
+
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  font-weight: bold;
+  background: none;
+}
+.page-block {
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;  
+}
+
+.body-photos img {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}

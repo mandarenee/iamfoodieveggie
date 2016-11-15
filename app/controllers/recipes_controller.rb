@@ -10,6 +10,15 @@ class RecipesController < ApplicationController
   # GET /recipes/1
   # GET /recipes/1.json
   def show
+    @text_block = @recipe.text_blocks.build
+  end
+
+  def create_text_block
+    @recipe = Recipe.find(params[:id])
+    @text_block = @recipe.text_blocks.build(text_block_params)
+    if @text_block.save
+      redirect_to recipe_path(@recipe)
+    end
   end
 
   # GET /recipes/new
@@ -70,5 +79,9 @@ class RecipesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
       params.require(:recipe).permit(:title, :body, :photo, :serves, :published)
+    end
+
+    def text_block_params
+      params.require(:text_block).permit(:body, :photo)
     end
 end

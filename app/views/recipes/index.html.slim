@@ -1,0 +1,19 @@
+.text-center
+	#main-container.container
+		.row
+			- @recipes.each do |recipe|
+
+				hr
+				h2 = recipe.title
+				hr
+				- unless recipe.photo.url == "/images/original/missing.png"
+			    .body-photos.text-center
+			      = image_tag recipe.photo.url
+			      p = simple_format recipe.body
+
+				- if recipe.text_blocks.any?
+					- recipe.text_blocks.each do |block|
+						- unless block.photo.url == "/images/original/missing.png"
+							.body-photos.text-center
+								= image_tag block.photo.url
+						= simple_format block.body

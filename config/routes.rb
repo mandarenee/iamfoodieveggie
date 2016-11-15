@@ -1,14 +1,19 @@
 Rails.application.routes.draw do
   
   devise_for :users
-  resources :recipes
+  resources :recipes do
+    resources :text_blocks
+  end
   resources :articles do
     resources :comments
+    resources :text_blocks
   end
+
+  post "recipes/:id/text_blocks" => 'recipe#create_text_block', as: :create_recipe_text_block
 
   root 'articles#index'
 
-  get 'about', to: 'about#index'
+  get 'about', to: 'about#index', as: :about
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

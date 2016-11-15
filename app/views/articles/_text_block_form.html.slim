@@ -1,0 +1,23 @@
+= form_for([@article, @text_block]) do |f|
+  - if @text_block.errors.any?
+    div#error_explanation
+      h2 = "#{pluralize(@text_block.errors.count, "error")} prohibited this text_block from being saved:"
+
+      ul
+      - @text_block.errors.full_messages.each do |message|
+        li = message
+
+  = f.hidden_field :article_id, value: @article.id
+
+  div.field.text-center
+    = f.label :photo
+    br
+    = f.file_field :photo
+
+  div.field
+    = f.label :body
+    br
+    = f.text_area :body
+
+  div.actions
+    = f.submit

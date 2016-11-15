@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>iamfoodieveggie</title>
+  <title>RAZ kitchen</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,8 +10,10 @@
 	<div id="main-container" class="container">
 		<div class="col header">
 			<div class="text-center">
+				<div class="logo-image">
+	        <%= image_tag("/razkitchen_logo.jpg") %>
+        </div>
 				<%= render partial: "layouts/navbar" %>
-          <h1>I Am Food Veggie</h1>
 			</div>
 		</div>
 	</div>
