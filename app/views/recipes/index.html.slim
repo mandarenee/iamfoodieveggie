@@ -4,7 +4,10 @@
 			- @recipes.each do |recipe|
 
 				hr
-				h2 = recipe.title
+				- if user_signed_in?
+					h2 = link_to recipe.title, recipe_path(recipe)
+				- else
+					h2 = recipe.title
 				hr
 				- unless recipe.photo.url == "/images/original/missing.png"
 			    .body-photos.text-center
