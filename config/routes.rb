@@ -11,9 +11,10 @@ Rails.application.routes.draw do
 
   post "recipes/:id/text_blocks" => 'recipe#create_text_block', as: :create_recipe_text_block
 
-  root 'articles#index'
+  root 'recipes#index'
 
   get 'about', to: 'about#index', as: :about
+  get 'contact', to: 'about#contact', as: :contact
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

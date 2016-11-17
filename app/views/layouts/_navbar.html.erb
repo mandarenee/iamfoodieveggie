@@ -12,11 +12,11 @@
 
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li><%= link_to 'home', articles_path %></li>
+        <li><%= link_to 'home', root_path %></li>
         <li><%= link_to 'about me', about_path %></li>
         <li><%= link_to 'casa 256', articles_path %></li>
         <li><%= link_to 'recipes', recipes_path %></li>
-        <li><%= link_to 'contact', recipes_path %></li>
+        <li><%= link_to 'contact', contact_path %></li>
         <% if user_signed_in? %>
           <li><%= link_to 'new restaurant casa 256 post', new_article_path %></li>
           <li><%= link_to 'new recipe', new_recipe_path %></li>
