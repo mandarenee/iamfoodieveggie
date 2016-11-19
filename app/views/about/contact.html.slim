@@ -4,6 +4,6 @@
 			h1 Contact Me
 
 			ul#unstyled
-				li = mail_to "mariana.razuk@me.com", image_tag("/email_icon.png")
-				li = link_to image_tag("/facebook_icon.png"), "https://www.facebook.com/raz.kitchen.amazon/", target: "_blank"
-				li = link_to image_tag("/insta_icon.png"), "https://www.instagram.com/razkitchen/", target: "_blank"
+				li.contact-icon = mail_to "mariana.razuk@me.com", image_tag("/email_icon.png")
+				li.contact-icon = link_to image_tag("/facebook_icon.png"), "https://www.facebook.com/raz.kitchen.amazon/", target: "_blank"
+				li.contact-icon = link_to image_tag("/insta_icon.png"), "https://www.instagram.com/razkitchen/", target: "_blank"
