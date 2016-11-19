@@ -1,0 +1,22 @@
+.page-block
+  p#notice = notice
+	
+	h1 Editing Post Block
+
+	= render 'block_form'
+
+	= @post.each do |post|
+
+  div.text-center
+		h2 = @article.title
+	  - unless @article.photo.url == "/images/original/missing.png"
+	    .body-photos.text-center
+	      = image_tag @article.photo.url
+	  p = simple_format @article.body
+
+	  - if @article.text_blocks.any?
+	    - @article.text_blocks.each do |block|
+	      - unless block.photo.url == "/images/original/missing.png"
+	        .body-photos.text-center
+	          = image_tag block.photo.url
+	      = simple_format block.body

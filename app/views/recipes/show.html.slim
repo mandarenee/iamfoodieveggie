@@ -16,6 +16,10 @@
         .body-photos.text-center
           = image_tag block.photo.url
       = simple_format block.body
+      - if user_signed_in? && block.id
+        .text-center
+          h2 = link_to 'Edit section above', edit_recipe_text_block_path(@recipe.id, block.id)
+          h2 = link_to 'Delete section above', recipe_text_block_path(@recipe.id, block.id), method: :delete, data: { confirm: 'Are you sure?' }
 
   h4.text-center
   	- if user_signed_in?

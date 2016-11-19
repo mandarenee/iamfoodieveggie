@@ -142,3 +142,9 @@ ul#unstyled li {
 header .header {
   margin-bottom: 30px;
 }
+
+@media (min-width: 768px) {
+  #main-container {
+    width: 700px;
+  }
+}

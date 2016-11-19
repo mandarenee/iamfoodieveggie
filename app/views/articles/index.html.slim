@@ -1,7 +1,23 @@
-
 #main-container.container
 	.row
-		- @articles.each do |article|
+		h2.text-center
+			| Amazon dinning experience - Manaus
+		p
+			| Casa means house and 256 in the number of the house we (my husband Holger, Arti and Holly, our chocolate labradors, and I) live in. 
+		p
+			| With the Casa 256 project, I invite you to have dinner in our backyard, where I will cook for you with only local and fresh ingredients.
+
+		p
+			| Here you will find creative dishes using seasonal ingredients that I buy at the farmer´s market and some ingredients that we grow in our own yard, like mangoes, kale, and herbs.
+			It´s usually a plant-based three-course menu and we have a limitation of guests, so please contact me at #{mail_to "mariana.razuk@me.com"} for reservations and more information. 
+
+		p
+			| This project is a combination of my passion for food and love for interacting with people from all over the world.
+		p
+			| I was born in southern of Brazil and I will be happy to share with you my enthusiasm about living in Manaus and travelling around.
+
+	.row
+		- @articles.reverse.each do |article|
 
 			hr
 			h2.text-center

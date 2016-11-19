@@ -67,6 +67,11 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def edit_block
+    @article = Article.find(params[:article_id])
+    @text_block = TextBlock.find(params[:text_block_id])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
