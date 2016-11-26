@@ -5,10 +5,7 @@
 
 			hr
 			h2.text-center
-				- if user_signed_in?
-					= link_to recipe.title, recipe_path(recipe)
-				- else
-					= recipe.title
+				= link_to recipe.title, recipe_path(recipe)
 			hr
 			- unless recipe.photo.url == "/images/original/missing.png"
 		    .body-photos.text-center

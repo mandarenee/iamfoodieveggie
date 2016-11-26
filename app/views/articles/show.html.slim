@@ -26,4 +26,5 @@
       br
     = link_to 'Back', articles_path
 
-    = render 'text_block_form'
+    - if user_signed_in?
+      = render 'text_block_form'
