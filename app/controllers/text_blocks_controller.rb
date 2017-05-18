@@ -28,7 +28,7 @@ class TextBlocksController < ApplicationController
     @text_block = TextBlock.new(text_block_params)
 
     if @text_block.save
-			redirect_to find_redirect(post), notice: 'text_block was successfully created.'
+			redirect_to find_redirect(post_params), notice: 'text_block was successfully created.'
     else
       render :new
     end
@@ -40,7 +40,7 @@ class TextBlocksController < ApplicationController
     @text_block = set_text_block
     post = post_params
     if @text_block.update(text_block_params)
-      redirect_to find_redirect(post), notice: 'Text block was successfully updated.'
+      redirect_to find_redirect(post_params), notice: 'Text block was successfully updated.'
     else
       render :edit
     end

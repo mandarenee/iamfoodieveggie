@@ -9,15 +9,15 @@
 
   = f.hidden_field :recipe_id, value: @recipe.id
 
-  div.field.text-center
+  div.field
     = f.label :photo
     br
     = f.file_field :photo
-
   div.field
     = f.label :body
     br
-    = f.text_area :body
+    = f.text_area :body, class: 'tinymce', rows: 40, cols: 120
+    = tinymce
 
   div.actions
     = f.submit

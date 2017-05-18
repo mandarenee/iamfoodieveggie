@@ -1,14 +1,24 @@
 .page-block
-  p#notice = notice
   div.text-center
     hr
     h2 = @recipe.title
     hr
+  	- if user_signed_in?
+      h4.controlBlock
+        .row
+          .col-xs-12.col-sm-6
+            = link_to 'Edit recipe (publish here)', edit_recipe_path(@recipe.id)
+          .col-xs-12.col-sm-6
+            = link_to 'Delete recipe', @recipe, method: :delete, data: { confirm: 'Are you sure?' }
     - unless @recipe.photo.url == "/images/original/missing.png"
       .body-photos.text-center
         = image_tag @recipe.photo.url
 
   p = simple_format @recipe.body
+  - if user_signed_in?
+      h4.controlBlock
+        .row
+          = link_to 'Edit first recipe block', edit_recipe_path(@recipe)
 
   - if @recipe.text_blocks.any?
     - @recipe.text_blocks.each do |block|
@@ -17,17 +27,14 @@
           = image_tag block.photo.url
       = simple_format block.body
       - if user_signed_in? && block.id
-        .text-center
-          h2 = link_to 'Edit section above', edit_recipe_text_block_path(@recipe.id, block.id)
-          h2 = link_to 'Delete section above', recipe_text_block_path(@recipe.id, block.id), method: :delete, data: { confirm: 'Are you sure?' }
+        h4.controlBlock
+          .row
+            .col-xs-12.col-sm-6
+              = link_to 'Edit section above', edit_recipe_text_block_path(@recipe.id, block.id)
+            .col-xs-12.col-sm-6
+              = link_to 'Delete section above', recipe_text_block_path(@recipe.id, block.id), method: :delete, data: { confirm: 'Are you sure?' }
 
-  h4.text-center
-  	- if user_signed_in?
-      = link_to 'Edit', edit_recipe_path(@recipe)
-      br
-      = link_to 'Destroy', @recipe, method: :delete, data: { confirm: 'Are you sure?' }
-      br
 
-    = link_to 'Back', recipes_path
     - if user_signed_in?
       = render 'text_block_form'
+    = link_to 'Back', recipes_path

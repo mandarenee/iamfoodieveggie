@@ -15,6 +15,7 @@ gem "paperclip", "~> 4.3"
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'devise'
 gem 'slim-rails'
+gem 'tinymce-rails'
 
 group :test, :development do
   gem 'sqlite3'

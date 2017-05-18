@@ -17,7 +17,8 @@
   div.field
     = f.label :body
     br
-    = f.text_area :body
+    = f.text_area :body, class: 'tinymce', rows: 40, cols: 120
+    = tinymce
 
   div.actions
     = f.submit
